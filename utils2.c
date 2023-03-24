@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   utils2.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mazaroua <mazaroua@student.42.fr>          +#+  +:+       +#+        */
+/*   By: byoussef <byoussef@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/18 13:20:50 by mazaroua          #+#    #+#             */
-/*   Updated: 2023/03/18 13:37:45 by mazaroua         ###   ########.fr       */
+/*   Updated: 2023/03/20 14:52:15 by byoussef         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,6 +85,8 @@ char *remove_additional_spaces(char *line)
 		}
 		else if (line[i] == ' ')
 		{
+			if (check_end_of_line(line, i))
+				break;
             if (flag == 1)
                 new[k++] = line[i];
 			else if (l == 0)
